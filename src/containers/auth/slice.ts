@@ -12,9 +12,14 @@ const SPOTIFY_SCOPE = [
 
 const REDIRECT_URI = window.location.origin;
 
+export interface User {
+  userId?: string;
+  userName?: string;
+}
+
 export interface AuthState {
   accessToken?: string;
-  userId?: string;
+  user?: User;
   status: RequestStatus;
   error?: string;
 }
@@ -23,19 +28,15 @@ export interface AccessTokenPayload {
   accessToken: string;
 }
 
-export interface FetchUserIDSuccessPayload {
-  userID: string;
-}
-
 const initialState: AuthState = {
   status: RequestStatus.IDLE,
 };
 
 // Create actions
-export const getUserId = createAction("auth/getUserId");
-export const getUserIdSuccess = createAction<string>("auth/getUserIdSuccess");
-export const getUserIdFailed = createAction<ErrorPayload>(
-  "auth/getUserIdFailed"
+export const getUser = createAction("auth/getUser");
+export const getUserSuccess = createAction<User>("auth/getUserSuccess");
+export const getUserFailed = createAction<ErrorPayload>(
+  "auth/getUserFailed"
 );
 
 const authSlice = createSlice({
@@ -55,14 +56,14 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getUserId, (state) => {
+      .addCase(getUser, (state) => {
         state.status = RequestStatus.PENDING;
       })
-      .addCase(getUserIdSuccess, (state, action) => {
+      .addCase(getUserSuccess, (state, action) => {
         state.status = RequestStatus.SUCCESS;
-        state.userId = action.payload;
+        state.user = action.payload;
       })
-      .addCase(getUserIdFailed, (state, action) => {
+      .addCase(getUserFailed, (state, action) => {
         state.status = RequestStatus.ERROR;
         state.error = action.payload.message;
       });

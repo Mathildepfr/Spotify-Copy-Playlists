@@ -3,7 +3,7 @@ import axios from "axios";
 import { call, put, select, takeEvery } from "@redux-saga/core/effects";
 
 import { authSelectors } from "./selectors";
-import { getUserId, getUserIdFailed, getUserIdSuccess } from "./slice";
+import { getUser, getUserFailed, getUserSuccess } from "./slice";
 
 function* getUserIdSaga() {
   try {
@@ -14,14 +14,13 @@ function* getUserIdSaga() {
         headers: { Authorization: `Bearer ${accessToken}` },
       });
     const { data } = yield call(request);
-		console.log(data);
 
-    yield put(getUserIdSuccess(data.id));
+    yield put(getUserSuccess({ userId: data.id, userName: data.display_name }));
   } catch (error: any) {
-    yield put(getUserIdFailed({ message: error.message }));
+    yield put(getUserFailed({ message: error.message }));
   }
 }
 
 export default function* authSaga() {
-  yield takeEvery(getUserId.type, getUserIdSaga);
+  yield takeEvery(getUser.type, getUserIdSaga);
 }

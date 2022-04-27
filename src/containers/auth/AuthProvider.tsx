@@ -2,7 +2,7 @@ import React, { FC, ReactNode, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { authSelectors } from "./selectors";
-import { getUserId, login, setAccessToken } from "./slice";
+import { getUser, login, setAccessToken } from "./slice";
 
 type AuthProviderProps = {
   children: ReactNode;
@@ -31,7 +31,7 @@ const AuthProvider: FC<AuthProviderProps> = ({
 
   useEffect(() => {
     if (accessToken != null) {
-      dispatch(getUserId());
+      dispatch(getUser());
     }
   }, [accessToken]);
 

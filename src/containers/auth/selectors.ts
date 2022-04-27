@@ -6,6 +6,6 @@ const selectSelf = (state: RootState) => state.authentication;
 
 export const authSelectors = {
   getAccessToken: createSelector(selectSelf, (auth) => auth.accessToken),
-  getUserId: createSelector(selectSelf, (auth) => auth.userId),
+  getUser: createSelector(selectSelf, (auth) => auth.user),
   getStatus: createSelector(selectSelf, (auth) => auth.status),
 };

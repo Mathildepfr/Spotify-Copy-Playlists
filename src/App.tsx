@@ -8,9 +8,9 @@ import logo from "./logo.svg";
 
 const App: FC = (): ReactElement => {
   const dispatch = useDispatch();
-  const userId = useSelector(authSelectors.getUserId);
+  const user = useSelector(authSelectors.getUser);
 
-  console.log(userId);
+  console.log(user);
 
   return (
     <div className="App">
