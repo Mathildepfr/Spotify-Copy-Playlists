@@ -1,10 +1,17 @@
 import "./App.css";
 
 import React, { FC, ReactElement } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
+import { authSelectors } from "./containers/auth/selectors";
 import logo from "./logo.svg";
 
 const App: FC = (): ReactElement => {
+  const dispatch = useDispatch();
+  const userId = useSelector(authSelectors.getUserId);
+
+  console.log(userId);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -23,6 +30,6 @@ const App: FC = (): ReactElement => {
       </header>
     </div>
   );
-}
+};
 
 export default App;

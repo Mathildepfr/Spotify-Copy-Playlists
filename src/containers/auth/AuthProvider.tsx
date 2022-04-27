@@ -1,8 +1,8 @@
 import React, { FC, ReactNode, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { getAccessToken } from "./selectors";
-import { fetchUserID, login, setAccessToken } from "./slice";
+import { authSelectors } from "./selectors";
+import { getUserId, login, setAccessToken } from "./slice";
 
 type AuthProviderProps = {
   children: ReactNode;
@@ -12,13 +12,14 @@ const AuthProvider: FC<AuthProviderProps> = ({
   children,
 }: AuthProviderProps) => {
   const dispatch = useDispatch();
-  const accessToken = useSelector(getAccessToken());
+  const accessToken = useSelector(authSelectors.getAccessToken);
 
   const { location } = window;
   const regex = /.*access_token=(?<accesToken>[^&]*)/gi;
   const params = regex.exec(location.hash);
 
-  if (!accessToken && !params) {
+  if (!accessToken && params == null) {
+    console.log("login");
     dispatch(login());
   }
 
@@ -29,10 +30,10 @@ const AuthProvider: FC<AuthProviderProps> = ({
   }, []);
 
   useEffect(() => {
-    if (accessToken) {
-      dispatch(fetchUserID());
+    if (accessToken != null) {
+      dispatch(getUserId());
     }
-  });
+  }, [accessToken]);
 
   return <>{children}</>;
 };

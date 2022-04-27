@@ -1,4 +1,11 @@
+import { createSelector } from "@reduxjs/toolkit";
+
 import { RootState } from "../../store/store";
 
-export const getAccessToken = () => (state: RootState) =>
-  state.authentication.accessToken;
+const selectSelf = (state: RootState) => state.authentication;
+
+export const authSelectors = {
+  getAccessToken: createSelector(selectSelf, (auth) => auth.accessToken),
+  getUserId: createSelector(selectSelf, (auth) => auth.userId),
+  getStatus: createSelector(selectSelf, (auth) => auth.status),
+};
