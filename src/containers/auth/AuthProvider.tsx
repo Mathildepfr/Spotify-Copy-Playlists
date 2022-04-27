@@ -19,12 +19,11 @@ const AuthProvider: FC<AuthProviderProps> = ({
   const params = regex.exec(location.hash);
 
   if (!accessToken && params == null) {
-    console.log("login");
     dispatch(login());
   }
 
   useEffect(() => {
-    if (params && params[1]) {
+    if (!accessToken && params?.[1]) {
       dispatch(setAccessToken({ accessToken: params[1] }));
     }
   }, []);

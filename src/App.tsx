@@ -10,6 +10,7 @@ const App: FC = (): ReactElement => {
   const dispatch = useDispatch();
   const user = useSelector(authSelectors.getUser);
 
+  // TODO: You can access user data and now fetch user's playlists
   console.log(user);
 
   return (
