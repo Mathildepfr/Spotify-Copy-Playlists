@@ -22,6 +22,10 @@ export const getPlaylistFailed = createAction<ErrorPayload>(
   "playlists/getPlaylistFailed"
 );
 
+// createSlice : A function that accepts an initial state, an object of reducer functions, and a "slice name", and automatically generates action creators and action types that correspond to the reducers and state.
+// This API is the standard approach for writing Redux logic.
+// https://redux-toolkit.js.org/api/createslice
+
 const playlistsSlice = createSlice({
   // A name, used in action types
   name: "playlists",

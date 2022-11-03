@@ -26,9 +26,16 @@ const initialState: TrackstState = {
   isLoading: false,
 };
 
+// createSlice : A function that accepts an initial state, an object of reducer functions, and a "slice name", and automatically generates action creators and action types that correspond to the reducers and state.
+// This API is the standard approach for writing Redux logic.
+// https://redux-toolkit.js.org/api/createslice
+
 const tracksSlice = createSlice({
+  // A name, used in action types
   name: "tracks",
+  // The initial state for the reducer
   initialState,
+  // An object of "case reducers". Key names will be used to generate actions.
   reducers: {
     getTracksFetch: (state) => {
       state.isLoading = true;
