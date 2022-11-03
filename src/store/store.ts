@@ -11,6 +11,7 @@ import rootSaga from "./sagas";
 // create the saga middleware
 // createSagaMiddleware(options)​: Creates a Redux middleware and connects the Sagas to the Redux Store
 // https://redux-saga.js.org/docs/api/
+
 const sagaMiddleware = createSagaMiddleware();
 const middleware = [sagaMiddleware];
 
