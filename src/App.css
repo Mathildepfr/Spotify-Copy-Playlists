@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+/* .App {
+  background-color: #121212;
+  color: #fff;
+} */
+
+body {
+  background: #f4f4f4;
+  color: #121212!important;
+  --text-primary: #0f0f0f;
+  --text-secondary: #4e4e4e;
+  --accent: #dfb017;
+  --accent-hover: #cea315;
+  --border: #1f1e1e;
+  --shadow: 7px 15px 13px -4px #00000056;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+[data-theme='dark'] {
+  background: #121212;
+  color: white !important;
+  --accent: #fcfcfc;
+  --accent-hover: #5b4cbe;
+  --border: #1BD75C;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html {
+  overflow-y: scroll;
 }
 
-.App-header {
-  background-color: #282c34;
+.app-switch {
+  /* background-color: #1BD760; */
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #1BD760;
+  margin-bottom: 60px;
+}
+
+body>#root>div {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+}
+
+.main-containers {
+  margin-bottom: 20px 0px;
+}
+
+.main {
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
+  height: 100px;
 }
 
-.App-link {
-  color: #61dafb;
+.search {
+  position: absolute;
+  width: 400px;
+  left: 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.addplaylist {
+  position: absolute;
+  right: 0px;
+}
+
+.button-addnewplaylist {
+  align-items: center;
+  background-color: #1BD760;
+  border-radius: 5px;
+  border-style: none;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 500;
+  height: 40px;
+  overflow: visible;
+  padding: 2px 20px;
+}
+
+.button-addnewplaylist:hover {
+  background-color: transparent;
+  border: 2px solid #1BD760;
+  color: #1BD760;
 }

@@ -1,0 +1,35 @@
+.search {
+  width: 850px;
+  padding: 10px;
+  margin: 0px;
+  border-radius: 10px;
+  max-height: 90vh;
+  overflow-y: scroll;
+  background-color: #101010;
+  overflow-x: hidden;
+}
+
+.search_container {
+  margin: 0px!important;
+  width: 850px;
+}
+
+.search_box {
+  display: flex;
+  gap: 10px;
+  border-radius: 5px;
+  align-items: center;
+  background-color: #333333;
+  height: 40px;
+  color: white;
+}
+
+.search_input {
+  background-color: transparent !important;
+  color: white !important;
+  border: none !important;
+}
+
+.search_input:focus {
+  box-shadow: 0 0 0 0 !important;
+}

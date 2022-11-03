@@ -1,0 +1,53 @@
+.trackCard_container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+.trackCard_layout {
+  padding: 10px;
+  background-color: #181818;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  width: 100%;
+}
+
+.trackCard_layout:hover {
+  background-color: #333333;
+}
+
+.cover {
+  max-width: 100px;
+  border-radius: 5px;
+}
+
+.track_title {
+  font-size: 17px;
+  font-weight: bold;
+  color: white!important;
+}
+
+.titleAndArtist {
+  display: inline-block;
+}
+
+.track_artist {
+  color: #7F7F7F;
+}
+
+.track_album {
+  color: #7F7F7F;
+}
+
+.track_releasedate {
+  color: #7F7F7F;
+}
+
+.edit_track {
+  color: #1db954;
+  margin-left: 10px;
+}

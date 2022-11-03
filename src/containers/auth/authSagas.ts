@@ -14,7 +14,7 @@ function* getUserIdSaga() {
         headers: { Authorization: `Bearer ${accessToken}` },
       });
     const { data } = yield call(request);
-
+    // Using catch in case the API doesn't work
     yield put(getUserSuccess({ userId: data.id, userName: data.display_name }));
   } catch (error: any) {
     yield put(getUserFailed({ message: error.message }));

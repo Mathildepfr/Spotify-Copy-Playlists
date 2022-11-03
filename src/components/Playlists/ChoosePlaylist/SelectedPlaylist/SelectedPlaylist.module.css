@@ -1,0 +1,17 @@
+.heading {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.heading_names {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  width: 100%;
+}
+
+.delete_track {
+  color: #121212;
+  padding: 10px;
+}

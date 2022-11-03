@@ -1,0 +1,36 @@
+.modalcontent {
+  color: #181818;
+  padding: 40px!important;
+}
+
+.modalcontent input, textarea {
+  margin-bottom: 40px;
+  border: none!important;
+  background-color: #dadada!important;
+  font-weight: 300!important;
+}
+
+.modalcontent label {
+  font-size: large;
+  margin-bottom: 10px;
+}
+
+.modalcontent_title {
+  align-items: center;
+}
+
+.modalcontainer {
+  font-weight: 500;
+}
+
+.button-newplaylist_cancel {
+  background-color: #1BD760;
+}
+
+.button-newplaylist_create {
+  background-color: #1BD760;
+}
+
+.form-control input {
+  border: none;
+}
