@@ -1,3 +1,5 @@
+// for the tracks duration
+
 const millisToMinutesAndSeconds = (millis: number): string => {
   const seconds = Number((millis % 1000) % 60);
   const minutes = Math.floor((millis / (1000 * 60)) % 60);
