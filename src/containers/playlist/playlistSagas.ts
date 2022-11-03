@@ -14,7 +14,7 @@ import {
 
 import axios, { AxiosResponse } from "axios";
 import { put, select, takeLatest } from "redux-saga/effects";
-//takeLatest doesn't allow multiple Saga tasks to be fired concurrently.
+// takeLatest doesn't allow multiple Saga tasks to be fired concurrently.
 // As soon as it gets a new dispatched action, it cancels any previously-forked task (if still running).
 // takeLatest can be useful to handle AJAX requests where we want to only have the response to the latest request.
 // https://redux-saga.js.org/docs/advanced/Concurrency/
