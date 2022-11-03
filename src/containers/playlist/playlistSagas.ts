@@ -3,8 +3,7 @@ import { authSelectors } from "../auth/selectors";
 import { User } from "../auth/slice";
 import { Playlist } from "../../types/playlist";
 
-import axios, { AxiosResponse } from "axios";
-import { put, select, takeLatest } from "redux-saga/effects";
+import * as tracksSlicesActions from "../track/trackSlice";
 import {
   getPlaylists,
   createPlaylist,
@@ -12,7 +11,9 @@ import {
   getPlaylistsFailure,
   addPlaylistsSuccess,
 } from "./playlistSlice";
-import * as tracksSlicesActions from "../track/trackSlice";
+
+import axios, { AxiosResponse } from "axios";
+import { put, select, takeLatest } from "redux-saga/effects";
 
 // GET PLAYLISTS
 function* getPlaylistsApiSaga() {

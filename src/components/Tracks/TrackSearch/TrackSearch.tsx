@@ -6,6 +6,16 @@ import Track from "../TrackCards/TrackCards";
 
 import { Col, Form, Row } from "react-bootstrap";
 import { useEffect, useState } from "react";
+// The useEffect Hook allows you to perform side effects in your components.
+// Some examples of side effects are: fetching data, directly updating the DOM, and timers.
+// useEffect accepts two arguments.The second argument is optional.
+// useEffect(<function>, <dependency>)
+// https://www.w3schools.com/react/react_useeffect.asp
+
+// The React useState Hook allows us to track state in a function component.
+// State generally refers to data or properties that need to be tracking in an application.
+// https://www.w3schools.com/react/react_usestate.asp
+
 import axios from "axios";
 import { useSelector } from "react-redux";
 // useSelector: Allows you to extract data from the Redux store state, using a selector function.

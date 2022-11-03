@@ -5,6 +5,11 @@ import { playlistSelectors } from "../../../../containers/playlist/playlistSelec
 import useSpotify from "../../../../store/hooks/useSpotify";
 
 import { useEffect } from "react";
+// The useEffect Hook allows you to perform side effects in your components.
+// Some examples of side effects are: fetching data, directly updating the DOM, and timers.
+// useEffect accepts two arguments.The second argument is optional.
+// useEffect(<function>, <dependency>)
+// https://www.w3schools.com/react/react_useeffect.asp
 import { Form } from "react-bootstrap";
 import { useSelector } from "react-redux";
 // useSelector: Allows you to extract data from the Redux store state, using a selector function.
