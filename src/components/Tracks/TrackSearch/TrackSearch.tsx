@@ -8,6 +8,8 @@ import { Col, Form, Row } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
+// useSelector: Allows you to extract data from the Redux store state, using a selector function.
+// https://react-redux.js.org/api/hooks#using-memoizing-selectors
 import { FaSearch } from "react-icons/fa";
 
 // Get search results

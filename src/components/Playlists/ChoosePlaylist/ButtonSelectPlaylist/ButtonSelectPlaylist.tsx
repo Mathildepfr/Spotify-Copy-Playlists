@@ -7,6 +7,8 @@ import useSpotify from "../../../../store/hooks/useSpotify";
 import { useEffect } from "react";
 import { Form } from "react-bootstrap";
 import { useSelector } from "react-redux";
+// useSelector: Allows you to extract data from the Redux store state, using a selector function.
+// https://react-redux.js.org/api/hooks#using-memoizing-selectors
 
 const SelectPlaylist: React.FC<any> = (props) => {
   const actions = useSpotify();

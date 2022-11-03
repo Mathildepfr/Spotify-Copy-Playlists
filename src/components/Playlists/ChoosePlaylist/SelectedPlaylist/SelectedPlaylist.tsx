@@ -4,6 +4,8 @@ import Track from "../../../Tracks/TrackCards/TrackCards";
 import { trackSelectors } from "../../../../containers/track/trackSelectors";
 
 import { useSelector } from "react-redux";
+// useSelector: Allows you to extract data from the Redux store state, using a selector function.
+// https://react-redux.js.org/api/hooks#using-memoizing-selectors
 import { TrackItem } from "../../../../types/track";
 import { Spinner } from "react-bootstrap";
 import { FaRegClock, FaTrash } from "react-icons/fa";
